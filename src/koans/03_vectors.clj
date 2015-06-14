@@ -15,7 +15,7 @@
   (= __ (vector nil nil))
 
   ; "But you can populate it with any number of elements at once"
-  "아니면 여러 요소를 한번에 가져와서 만들 수도 있다"
+  "아니면 한꺼번에 여러 요소를 가져와서 만들 수도 있다"
   (= [1 __] (vec '(1 2)))
 
   ; "Conjoining to a vector is different than to a list"
@@ -31,7 +31,7 @@
   (= __ (last [:peanut :butter :and :jelly]))
 
   ; "Or any index if you wish"
-  "또, 몇 번째 요소를 원하는지 말하라"
+  "또는, 몇 번째 요소를 원하는지 말하라"
   (= __ (nth [:peanut :butter :and :jelly] 3))
 
   ; "You can also slice a vector"
@@ -39,5 +39,5 @@
   (= __ (subvec [:peanut :butter :and :jelly] 1 3))
 
   ; "Equality with collections is in terms of values"
-  "컬렉션과 비교는 각각의 값을 비교함으로 이뤄진다"
+  "컬렉션과 비교는 각각의 값들을 비교해서 판단한다"
   (= (list 1 2 3) (vector 1 2 __)))

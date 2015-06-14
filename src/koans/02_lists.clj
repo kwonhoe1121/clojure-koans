@@ -3,15 +3,15 @@
 
 (meditations
   ; "Lists can be expressed by function or a quoted form"
-  "리스트는 함수 또는 인용된 형태로 표현할 수 있다"
+  "리스트는 함수나 인용된 형태로 표현할 수 있다"
   (= '(__ __ __ __ __) (list 1 2 3 4 5))
 
   ; "They are Clojure seqs (sequences), so they allow access to the first"
-  "리스트는 클로저 순서형(sequences)이므로, 제일 처음 값을 쉽게 읽을 수 있다"
+  "리스트는 클로저 시퀀스(sequences)이므로, 첫번째 값을 쉽게 읽을 수 있다"
   (= __ (first '(1 2 3 4 5)))
 
   ; "As well as the rest"
-  "뒷부분 값들을 접근하기도 쉽다"
+  "나머지 뒷부분을 접근하기도 쉽다"
   (= __ (rest '(1 2 3 4 5)))
 
   ; "Count your blessings"
@@ -50,9 +50,8 @@
             "No dice!")))
 
   ; "The rest of nothing isn't so strict"
-  "그러나 나머지를 구하는 것은 그렇게 엄격하지는 않다"
+  "나머지를 구하는 것은 그렇게 엄격하지 않다"
   (= __ (try
           (rest '())
           (catch IllegalStateException e
             "No dice!"))))
-

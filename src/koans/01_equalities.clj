@@ -7,15 +7,15 @@
   (= __ true)
 
   ; "To understand reality, we must compare our expectations against reality"
-  "현실을 이해하기 위해서는, 우리의 예상을 현실과 비교해야 한다"
+  "현실을 이해하기 위해서는, 반드시 우리의 예상을 현실과 비교해야만 한다"
   (= __ (+ 1 1))
 
   ; "You can test equality of many things"
-  "여러 것이 같은지 확인할 수도 있다"
+  "여러 것이 같은지 한번에 확인할 수도 있다"
   (= (+ 3 4) 7 (+ 2 __))
 
   ; "Some things may appear different, but be the same"
-  "어떤 것들은 다르게 보일지도 모르지만, 같은 것이다"
+  "어떤 것들은 겉으로는 다르게 보일지도 모르지만, 사실은 같은 것이다"
   (= __ (= 2 2/1))
 
   ; "You cannot generally float to heavens of integers"
@@ -23,11 +23,11 @@
   (= __ (= 2 2.0))
 
   ; "But a looser equality is also possible"
-  "그러나 같게도 볼 수 있다"
+  "그러나 관대하게 보자면 같게도 볼 수 있다"
   (= __ (== 2.0 2))
 
   ; "Something is not equal to nothing"
-  "어떤 것이 있다는 것은 없다는 것이 아니다"
+  "어떤 것이 '있다'는 '없다'의 반대다"
   (= __ (not (= 1 nil)))
 
   ; "Strings, and keywords, and symbols: oh my!"
