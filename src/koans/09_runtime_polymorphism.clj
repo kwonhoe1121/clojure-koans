@@ -16,15 +16,15 @@
 
 (meditations
   ;; "Some functions can be used in different ways - with no arguments"
-  "어떤 함수는 여러 방식으로 사용되기도 한다 - 인수 없는 경우"
+  "어떤 함수는 여러 방식으로 사용되기도 한다 - 전달인자가 없는 경우"
   (= __ (hello))
 
   ;; "With one argument"
-  "인수 한 개를 받는 경우"
+  "전달인자 한 개를 받는 경우"
   (= __ (hello "world"))
 
   ;; "Or with many arguments"
-  "또는 인수 여러 개를 받는 경우"
+  "또는 전달인자 여러 개를 받는 경우"
   (= __
      (hello "Peter" "Paul" "Mary"))
 
@@ -34,12 +34,12 @@
      (diet {:species "deer" :name "Bambi" :age 1 :eater :herbivore}))
 
   ;; "Animals have different names"
-  "동물은 각각 이름이 있다"
+  "동물은 각각 다른 이름이 있다"
   (= "Thumper eats veggies."
     (diet {:species "rabbit" :name "Thumper" :age 1 :eater :herbivore}))
 
   ;; "Different methods are used depending on the dispatch function result"
-  "디스패치 함수 결과값에 따라 다른 메소드를 사용할 수 있다"
+  "디스패치 함수의 결과값에 따라 다른 메소드를 사용할 수 있다"
   (= "Simba eats animals."
      (diet {:species "lion" :name "Simba" :age 1 :eater :carnivore}))
 

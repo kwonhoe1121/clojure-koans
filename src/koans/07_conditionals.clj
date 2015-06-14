@@ -12,13 +12,13 @@
 
 (meditations
   ; "You will face many decisions"
-  "결정해야만 하는 일들이 많은 것이다"
+  "결정해야만 하는 일들이 많을 것이다"
   (= __ (if (false? (= 4 5))
           :a
           :b))
 
   ; "Some of them leave you no alternative"
-  "어떤 결정은 대안이 없다"
+  "어떤 결정에는 대안이 없다"
   (= __ (if (> 4 3)
           []))
 
@@ -34,14 +34,14 @@
               __))
 
   ; "You may have a multitude of possible paths"
-  "그대에게는 매우 다양한 길이 있다"
+  "그대 앞에 매우 다양한 길이 있다"
   (let [x 5]
     (= :your-road (cond (= x __) :road-not-taken
                         (= x __) :another-road-not-taken
                         :else __)))
 
   ; "Or your fate may be sealed"
-  "아니, 그대의 운명은 이미 정해진 걸지도"
+  "아니, 어쩌면 그대의 운명은 이미 정해진 걸지도"
   (= 'doom (if-not (zero? __)
           'doom
           'more-doom))
@@ -52,6 +52,6 @@
      (explain-defcon-level __))
 
   ; "But admit it when you don't know what to do"
-  "그러나 무얼해야할지 모르겠다면 그 사실을 인정하라"
+  "그러나 무얼 해야할지 모르겠다면 그 사실을 인정하라"
   (= __
      (explain-defcon-level :yo-mama)))

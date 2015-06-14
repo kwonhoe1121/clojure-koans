@@ -3,11 +3,11 @@
 
 (meditations
   ;; "The map function relates a sequence to another"
-  "맵(map) 함수는 시퀀스를 연관된 다른 시퀀스로 만들어낸다"
+  "맵(map) 함수는 시퀀스를 관련한 다른 시퀀스로 만들어낸다"
   (= [__ __ __] (map (fn [x] (* 4 x)) [1 2 3]))
 
   ;; "You may create that mapping"
-  "그 연관을 함수로 만들어 내거나"
+  "연관 함수를 직접 만들어서 쓰거나"
   (= [1 4 9 16 25] (map (fn [x] __) [1 2 3 4 5]))
 
   ;; "Or use the names of existing functions"
@@ -35,7 +35,7 @@
   (= __ (reduce (fn [a b] (* a b)) [1 2 3 4]))
 
   ;; "You can start somewhere else"
-  "초기값을 지정할 수도 있다"
+  "초기값을 지정해 시작할 수 있다"
   (= 2400 (reduce (fn [a b] (* a b)) __ [1 2 3 4]))
 
   ;;"Numbers are not the only things one can reduce"
