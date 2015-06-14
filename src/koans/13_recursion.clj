@@ -21,35 +21,35 @@
 
 (meditations
   ;; "Recursion ends with a base case"
-  "재귀는 종료 기준이 있다"
+  "재귀는 종료 기준으로 끝난다"
   (= true (is-even? 0))
 
   ;; "And starts by moving toward that base case"
-  "그리고 그 종료 기준을 위해 나아가며 시작한다"
+  "그리고 그 종료 기준으로 다가가는 것으로 시작한다"
   (= false (is-even? 1))
 
   ;; "Having too many stack frames requires explicit tail calls with recur"
-  "너무 많은 스택 프레임이 필요한 경우 recur로 명시적인 꼬리재귀호출(tail call)이 필요하다"
+  "너무 많은 스택 프레임이 필요한 경우, recur로 명시적인 꼬리재귀호출(tail call)이 필요하다"
   (= false (is-even-bigint? 100003N))
 
   ;; "Reversing directions is easy when you have not gone far"
-  "너무 멀리 가지 않았다면 되돌아가기 쉽다"
+  "멀리 가지 않았다면 되돌아가기 쉽다"
   (= '(1) (recursive-reverse [1]))
 
   ;; "Yet it becomes more difficult the more steps you take"
-  "더 걸어갈 수록 힘들어지지만 말이다"
+  "더 걸어갈수록 힘들어지지만 말이다"
   (= '(5 4 3 2 1) (recursive-reverse [1 2 3 4 5]))
 
   ;; "Simple things may appear simple."
-  "간단한 것들은 겉보기에도 간단하다"
+  "간단한 것들은 간단하게 드러날 것이다"
   (= 1 (factorial 1))
 
   ;;"They may require other simple steps."
-  "간단한 몇 단계를 더 필요로 하기도 한다"
+  "간단한 단계가 몇 번 더 필요할 때도 있다"
   (= 2 (factorial 2))
 
   ;; "Sometimes a slightly bigger step is necessary"
-  "어떨 때는 조금 큰 단계가 필요하다"
+  "어떨 때는 조금 큰 조치가 필요하다"
   (= 6 (factorial 3))
 
   ;; "And eventually you must think harder"

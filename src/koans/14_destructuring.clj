@@ -8,7 +8,7 @@
 
 (meditations
   ;; "Destructuring is an arbiter: it breaks up arguments"
-  "디스트럭쳐링(destructuring)으로 인수를 쪼갤 수 있다"
+  "디스트럭쳐링(destructuring)으로 전달인자를 나눌 수 있다"
   (= __ ((fn [[a b]] (str b a))
          [:foo :bar]))
 
@@ -28,13 +28,13 @@
        __))
 
   ;; "You can regain the full argument if you like arguing"
-  "전체 인수를 따로 받을 수도 있다"
+  "전체 전달인자를 되찾을 수 있다"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
      (let [[first-name last-name :as full-name] ["Stephen" "Hawking"]]
        __))
 
   ;; "Break up maps by key"
-  "맵(map)을 키별로 나눠 받을 수 있다"
+  "맵(map)을 키(key)로 나눠 받을 수 있다"
   (= "123 Test Lane, Testerville, TX"
      (let [{street-address :street-address, city :city, state :state} test-address]
        __))
