@@ -3,13 +3,13 @@
 
 (meditations
   ;; "Sequence comprehensions can bind each element in turn to a symbol"
-  "시퀀스 반복문으로 각각의 요소를 한 심볼에 바인드 할 수 있다"
+  "시퀀스 반복문으로 각 요소를 한 심볼에 바인드 할 수 있다"
   (= __
      (for [x (range 6)]
        x))
 
   ;; "They can easily emulate mapping"
-  "그것을 쉽게 매핑할 수 있다"
+  "그것으로 쉽게 매핑처럼 쓸 수 있다"
   (= '(0 1 4 9 16 25)
      (map (fn [x] (* x x))
           (range 6))

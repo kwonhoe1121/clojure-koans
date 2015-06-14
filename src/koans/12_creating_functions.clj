@@ -5,7 +5,7 @@
 
 (meditations
   ;; "One may know what they seek by knowing what they do not seek"
-  "찾지 않는 것을 앎으로써 찾는 것을 알게 될 수 있다"
+  "찾지 않는 것을 아는 방법으로 찾는 것을 알게 되기도 한다"
   (= [__ __ __] (let [not-a-symbol? (complement symbol?)]
                   (map not-a-symbol? [:a 'b "c"])))
 
