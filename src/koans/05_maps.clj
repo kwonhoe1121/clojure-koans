@@ -28,7 +28,7 @@
 
   ; "But map keys need not be keywords"
   "맵의 키가 반드시 키워드일 필요는 없다"
-  (= __ ({2010 "밴쿠버" 2014 "소치" 2018 "평창"} 2014))
+  (= __ ({2010 "Vancouver" 2014 "Sochi" 2018 "PyeongChang"} 2014))
 
   ; "You may not be able to find an entry for a key"
   "때로는 키로 엔트리를 찾지 못할 때도 있다"
@@ -48,17 +48,17 @@
 
   ; "Maps are immutable, but you can create a new and improved version"
   "맵은 불변(immutable)이지만, 엔트리를 추가한 새 버전을 만들 수 있다"
-  (= {1 "해오름달" 2 __} (assoc {1 "해오름달"} 2 "시샘달"))
+  (= {1 "January" 2 __} (assoc {1 "January"} 2 "February"))
 
   ; "You can also create a new version with an entry removed"
   "한 엔트리를 제거한 새 버전을 만들 수도 있다"
-  (= {__ __} (dissoc {1 "해오름달" 2 "시샘달"} 2))
+  (= {__ __} (dissoc {1 "January" 2 "February"} 2))
 
   ; "Often you will need to get the keys, but the order is undependable"
   "키목록이 필요하면 구할 수 있지만, 순서는 보장되지 않는다"
   (= (list __ __ __)
-     (sort (keys { 2014 "소치" 2018 "평창" 2010 "밴쿠버"})))
+     (sort (keys { 2014 "Sochi" 2018 "PyeongChang" 2010 "Vancouver"})))
 
   "값들도 비슷한 방법으로 구할 수 있다"
   (= (list __ __ __)
-     (sort (vals {2010 "밴쿠버" 2014 "소치" 2018 "평창"}))))
+     (sort (vals {2010 "Vancouver" 2014 "Sochi" 2018 "PyeongChang"}))))
