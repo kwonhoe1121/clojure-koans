@@ -47,5 +47,5 @@
   (= __ (macroexpand '(infix-better ( 10 + (2 * 3)))))
 
   ;; "Really, you don't understand recursion until you understand recursion"
-  "진짜로 재귀를 이해하기 전까지는 재귀를 이해하지 못한 것이다"
+  "재귀를 진짜로 이해하기 전까지는 재귀를 이해하지 못한 것이다"
   (= 36 (r-infix (10 + (2 * 3) + (4 * 5)))))

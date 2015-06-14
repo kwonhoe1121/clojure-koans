@@ -26,7 +26,7 @@
   (= __ (.prize (Nobel. "peace")))
 
   ;; "Types are quite similar"
-  "타입도 꽤 비슷하다"
+  "타입도 레코드와 꽤 비슷하다"
   (= __ (.prize (Pulitzer. "literature")))
 
   ;; "Records may be treated like maps"
@@ -38,17 +38,17 @@
   (= __ (:prize (Pulitzer. "poetry")))
 
   ;; "Further study reveals why"
-  "더 깊이 살펴보면 이유를 알게 된다"
+  "더 공부하면 이유를 알게 된다"
   (= __
      (map map? [(Nobel. "chemistry")
                 (Pulitzer. "music")]))
 
   ;; "Either sort of datatype can define methods in a protocol"
-  "두 데이터타입은 프로토콜로 메소드를 정의할 수 있다"
+  "두 데이터타입 모두 프로토콜(protocol)로 메소드를 정의할 수 있다"
   (= __
      (with-out-str (present (Oscar. "Best Picture") "Evil Alien Conquerors")))
 
   ;; "Surely we can implement our own by now"
-  "물론 우리의 메소드를 바로 구현할 수 있다"
+  "지금쯤은 틀림없이 스스로 구현(implement)할 수 있을 것이다"
   (= "You're really the Worst Picture, Final Destination 5... sorry."
      (with-out-str (present (Razzie. "Worst Picture") "Final Destination 5"))))
