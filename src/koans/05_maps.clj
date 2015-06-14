@@ -3,11 +3,11 @@
 
 (meditations
   ; "Don't get lost when creating a map"
-  "길을 찾고자 한다면 맵(map)을 만들어보라"
+  "맵(map)을 만들때 길을 잃지 마라"
   (= {:a 1 :b 2} (hash-map :a 1 __ __))
 
   ; "A value must be supplied for each key"
-  "모든 키에 대응하는 값이 반드시 있어야 한다"
+  "모든 키(key)에 대응하는 값이 반드시 있어야 한다"
   (= {:a 1} (hash-map :a __))
 
   ; "The size is the number of entries"
@@ -23,7 +23,7 @@
   (= __ ({:a 1 :b 2} :a))
 
   ; "And so can keywords"
-  "키워드도 그러하다"
+  "키워드도 마찬가지다"
   (= __ (:a {:a 1 :b 2}))
 
   ; "But map keys need not be keywords"
@@ -31,7 +31,7 @@
   (= __ ({2010 "밴쿠버" 2014 "소치" 2018 "평창"} 2014))
 
   ; "You may not be able to find an entry for a key"
-  "때로는 키로 엔트리를 찾지 못할 것이다"
+  "때로는 키로 엔트리를 찾지 못할 때도 있다"
   (= __ (get {:a 1 :b 2} :c))
 
   ; "But you can provide your own default"
@@ -47,18 +47,18 @@
   (= __ (contains? {:a nil :b nil} :c))
 
   ; "Maps are immutable, but you can create a new and improved version"
-  "맵은 이뮤터블하다, 필요하다면 조금 바뀐 새 버전을 만들 수 있다"
+  "맵은 불변(immutable)이지만, 엔트리를 추가한 새 버전을 만들 수 있다"
   (= {1 "해오름달" 2 __} (assoc {1 "해오름달"} 2 "시샘달"))
 
   ; "You can also create a new version with an entry removed"
-  "한 엔트리를 제거하고 새 버전을 만들 수도 있다"
+  "한 엔트리를 제거한 새 버전을 만들 수도 있다"
   (= {__ __} (dissoc {1 "해오름달" 2 "시샘달"} 2))
 
   ; "Often you will need to get the keys, but the order is undependable"
-  "키목록이 필요해서 구할 수 있지만, 순서는 보장되지 않는다"
+  "키목록이 필요하면 구할 수 있지만, 순서는 보장되지 않는다"
   (= (list __ __ __)
      (sort (keys { 2014 "소치" 2018 "평창" 2010 "밴쿠버"})))
 
-  "You can get the values in a similar way"
+  "값들도 비슷한 방법으로 구할 수 있다"
   (= (list __ __ __)
      (sort (vals {2010 "밴쿠버" 2014 "소치" 2018 "평창"}))))

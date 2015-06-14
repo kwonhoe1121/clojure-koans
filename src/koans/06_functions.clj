@@ -16,7 +16,7 @@
   (= __ (multiply-by-ten 2))
 
   ; "But they can also be defined inline"
-  "그러나 곧바로 정의해 쓸 수도 있다"
+  "하지만 즉석에서 정의해 쓸 수도 있다"
   (= __ ((fn [n] (* 5 n)) 2))
 
   ; "Or using an even shorter syntax"
@@ -24,15 +24,15 @@
   (= __ (#(* 15 %) 4))
 
   ; "Even anonymous functions may take multiple arguments"
-  "익명 함수도 여러 인자를 받을 수 있다"
+  "익명 함수도 여러 전달인자(argument)를 받을 수 있다"
   (= __ (#(+ %1 %2 %3) 4 5 6))
 
   ; "Arguments can also be skipped"
-  "필요 없는 인자는 건너 뛸 수도 있다"
+  "필요 없는 전달인자는 건너 뛸 수도 있다"
   (= __ (#(* 15 %2) 1 2))
 
   ; "One function can beget another"
-  "한 함수가 다른 함수를 만들어 낼 수 있다"
+  "함수가 다른 함수를 만들어 낼 수 있다"
   (= 9 (((fn [] ___)) 4 5))
 
   ; "Functions can also take other functions as input"
@@ -41,7 +41,7 @@
            ___))
 
   ; "Higher-order functions take function arguments"
-  "고차함수(Higher-order functions)는 함수를 인자로 받는다"
+  "고차함수(Higher-order functions)는 함수를 전달인자로 받는다"
   (= 25 (___
           (fn [n] (* n n))))
 
