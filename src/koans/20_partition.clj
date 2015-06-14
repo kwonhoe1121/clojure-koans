@@ -23,5 +23,5 @@
   (= '((0 1 2) (3 4 5) (6 :hello)) (partition 3 3 [__] (range 7)))
 
   ;; "... but notice that they will only pad up to the given sequence length"
-  "그러나 패딩은 정해진 시퀀스 길이까지만 붙는다"
+  "그러나 패딩(padding)은 주어진 시퀀스 길이까지만 붙는다"
   (= '((0 1 2) (3 4 5) __) (partition 3 3 [:these :are "my" "words"] (range 7))))
