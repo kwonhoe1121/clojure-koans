@@ -1,159 +1,89 @@
-# Clojure Koans
+# 클로저 선문답
 
-The Clojure Koans are a fun and easy way to get started with Clojure - no
-experience assumed or required.  Just follow the instructions below to start
-making tests pass!
+> '클로저 선문답'은 ['Clojure Koans'](https://github.com/functional-koans/clojure-koans)를 한국어로 번역한 것입니다. Thanks, ClojureKoans contributors!
 
-
-### Getting Started
-
-The easiest and fastest way to get the koans up and running is to [download the
-latest zip file from Github](https://github.com/functional-koans/clojure-koans/downloads).
-This way, you'll have all the dependencies you need, including Clojure itself
-and JLine, and you can skip the rest of this section (skip to "Running the
-Koans").
-
-If you're starting from a cloned or forked repo, that's cool too. This way
-you'll be able to track your progress in Git, and see how your answers compare
-to others, by checking out the project's Network tab. You might want to create
-your own branch - that way if you pull back the latest koans from master, it'll
-be a bit easier to manage the inevitable conflicts if we make changes to
-exercises you've already completed.
-
-The only things you'll need to run the Clojure Koans are:
-
-- JRE 1.5 or higher
-- [clojure-1.5.1.jar](http://repo1.maven.org/maven2/org/clojure/clojure/1.5.1/clojure-1.5.1.zip)
-
-You can use [Leiningen](http://github.com/technomancy/leiningen) to
-automatically install the Clojure jar in the right place. Leiningen will also
-get you a couple more jarfiles, including JLine, which allows you some of the
-functionality of readline (command-line history, for example).
-
-### Installing dependencies
-
-Dependencies are installed automatically with lein 2, but if for some reason
-you're on lein 1 and can't upgrade, you'll need to run
-
-`lein deps`
-
-which will download all dependencies you need to run the Clojure koans.
-
-I strongly recommend that you upgrade to lein 2 instead!
-
-### Running the Koans
-
-If you're running from the zipfile, simply run
-
-`script/run` on Mac/\*nix
-
-`script\run` on Windows
-
-If you're running from a checkout using lein 2, run the koans via
-
-`lein koan run`
-
-It's an auto-runner, so as you save your files with the correct answers, it will
-advance you to the next koan or file (conveniently, all files are prefixed with
-the sequence that you should follow).
-
-You'll see something like this:
-
-    Now meditate on /home/colin/Projects/clojure-koans/src/koans/01_equalities.clj:3
-    ---------------------
-    Assertion failed!
-    We shall contemplate truth by testing reality, via equality.
-    (= __ true)
-
-The output is telling you that you have a failing test in the file named
-`01_equalities.clj`, on line 3. So you just need to open that file up and make
-it pass!  You'll always be filling in the blanks to make tests pass.
-Sometimes there could be several correct answers (or even an infinite number):
-any of them will work in these cases. Some tests will pass even if you replace
-the blanks with whitespace (or nothing) instead of the expected answer. Make sure
-you give one correct expression to replace each blank.
-
-The koans differ from normal TDD in that the tests are already written for you,
-so you'll have to pay close attention to the failure messages, because up until
-the very end, making a test pass just means that the next failure message comes
-up.
-
-While it might be easy (especially at first) to just fill in the blanks making
-things pass, you should work thoughtfully, making sure you understand why the
-answer is what it is.  Enjoy your path to Clojure enlightenment!
+'클로저 선문답'은 여러분에게 [클로저 언어](http://clojure.org)의 신비를 전수하는 연습 문제 모음입니다. 여러분은 앞에 펼쳐진 길을 따라가며, 간단한 데이터형에서 매크로까지, 꼬리재귀(tail recursion)에서 자바와의 연동까지, 클로저 언어의 주요한 측면들을 모두 접하게 될 것입니다. 많은 분이 클로저가 그 전까지 썼던 프로그래밍 언어들과는 매우 다르다는 것을 알게될 것입니다. 이 선문답은 점진적이며 문답식인 배움법으로 여러분이 자연스럽게 클로저 언어로 옮겨갈 수 있도록 도울 것입니다. 모든 관문을 통과할 때 쯤이면, 클로저가 전혀 기이하지 않게 여겨질 것입니다.
 
 
-### Trying more things out
+## 자바 설치하기
 
-There's a REPL (Read-Evaluate-Print Loop) included in the Clojure Koans. Just
-run:
+선문답을 시작하기에 앞서 클로저가 필요하고, 클로저를 설치하기 전에 자바가 필요합니다. 아마도 여러분에게 자바가 이미 설치돼 있을테지만, 만약 그렇지 않더라도, 설치하기는 어렵지 않습니다. 윈도 사용자는 오라클의 윈도용 자바 설치 방법을 참고하고, 리눅스 사용자는 선호하는 패키지 관리자를 이용하도록 합니다. 애플은 시스템 업데이트 도구를 통해 자바 6를 배포하고 있습니다.
 
-`script/repl` on Mac/\*nix
+필요하다면 자바를 설치한 뒤, 콘솔(터미널)을 열어 아래 명령어를 입력합니다:
 
-`script\repl` on Windows
-
-If you're on lein 2, `lein repl` is what you want instead.
-
-Here are some interesting commands you might try, once you're in a running REPL:
-
-```clojure
-(find-doc "vec")
-(find-doc #"vec$")
-(doc vec)
+```sh
+$ java -version
 ```
 
-And if those still don't make sense:
+버전 1.5 이상이 설치돼 있어야 합니다.
 
-```clojure
-(doc doc)
-(doc find-doc)
+## 선문답 설치하기
+
+여러분이 전문가답게 클로저를 쓰려한다면, [라이닝엔(Leiningen)](http://leiningen.org)이라는 가장 널리 쓰이는 클로저 의존성 관리 도구를 써서 선문답을 설치하도록 합니다. (이게 곧 클로저를 설치해 줍니다.) 라이닝엔의 특혜를 받기 위해 설치 방법을 따르도록 합니다.
+
+중요: 이미 lein 1.x가 설치돼 있다면 라이닝엔 2로 업그레이드 합니다.
+
+라이닝엔을 설치한 후에는, 선문답 저장소를 클론(clone)하면 됩니다:
+
+```sh
+$ git clone git://github.com/hatemogi/clojure-koans.git
 ```
 
-will show you what those commands mean.
-
-You can exit the REPL with `CTRL-d` on any OS.
+만약 라이닝엔을 쓰기 싫다면, 선문답을 손수 설치할 수 있습니다. [여기 링크에서 최신 버전을 다운로드](http://github.com/hatemogi/clojure-koans/releases) 받고 압축을 풀어서 시작하실 수 있습니다.
 
 
-### Contributing
+## 선문답 실행하기
 
-Patches are encouraged!  Make sure the answer sheet still passes
-(`lein koan test`), and send a pull request.
+앞서 설명한 라이닝엔이 설치돼 있다면
 
-The file ideaboard.txt has lots of good ideas for new koans to start, or things
-to add to existing koans.  So write some fun exercises, add your answers to
-`resources/koans.clj`, and we'll get them in there!
+```sh
+$ lein koan run
+```
 
-Please follow the guidelines in
-http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html for
-commmit messages, and put your code in a feature branch (not master) before
-making the pull request. This makes patches easier to review.
+위의 명령어로 바로 시작할 수 있습니다.
 
-Feel free to contact me (Colin Jones / trptcolin) on Github or elsewhere if you
-have any questions or want more direction before you start pitching in.
+(저장소를 클론한 뒤 clojure-koans 디렉토리로 이동하는 것을 잊지 마세요!)
 
+또는, 라이닝엔을 안 쓴다면, 아래처럼 씁니다
 
-### Contributors
+```sh
+$ script/run
+```
 
-https://github.com/functional-koans/clojure-koans/contributors
+맥이나 리눅스에서는 위 명령어를 실행하고,
 
+```
+$ script\run
+```
 
-### Credits
+윈도에서는 위 명렁어를 씁니다.
 
-These exercises were started by [Aaron Bedra](http://github.com/abedra) of
-[Relevance, Inc.](http://github.com/relevance) in early 2010, as a learning
-tool for newcomers to functional programming. Aaron's macro-fu makes these
-koans extremely simple and fun to use, and to improve upon, and without
-Relevance's initiative, this project would not exist.
+그러면 아래와 같은 에러 메시지를 보게 됩니다:
 
-Using the [koans](http://en.wikipedia.org/wiki/koan) metaphor as a tool for
-learning a programming language started with the
-[Ruby Koans](http://rubykoans.com) by [EdgeCase](http://github.com/edgecase).
+```plain
+Now meditate on ~/clojure-koans/src/koans/01_equalities.clj:6
+---------------------
+Assertion failed!
+같은지 확인해가며 현실을 시험해서 진실을 주의깊게 관찰하라
+(= __ true)
+```
 
+위 내용은 01_equalities.clj 파일의 6째줄에서 테스트가 실패하고 있다는 뜻입니다. 그럼 그 파일을 여러분이 즐겨 쓰는 텍스트 에디터로 열고, 밑줄 친 빈칸을 채워서 테스트를 통과하도록 합시다!
 
-### License
+## 반복
+
+첫번째 테스트를 통과하고 나면 그 다음 테스트가 실패하는 것을 알게 될 것입니다. 한 파일의 모든 테스트를 통과하고 나면, 자동으로 그 다음 파일의 선문답 과정이 시작됩니다.
+
+## 역자의 말
+
+이 사이트는 김대현이 한국어로 번역했고, GitHub Pages로 호스팅되고 있습니다. 별도 웹사이트는 <http://clojurekoans.hatemogi.com>에서 보실 수 있습니다.
+
+번역에 관한 문의나 제안은 [이슈로 남겨](https://github.com/hatemogi/clojure-koans/issues)주시거나, [풀리퀘스트를 보내](https://github.com/hatemogi/clojure-koans/pulls)주세요.
+
+## 라이선스
 
 The use and distribution terms for this software are covered by the
-Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)
+[Eclipse Public License 1.0](http://opensource.org/licenses/eclipse-1.0.php)
 which can be found in the file epl-v10.html at the root of this distribution.
 By using this software in any fashion, you are agreeing to be bound by
 the terms of this license.
