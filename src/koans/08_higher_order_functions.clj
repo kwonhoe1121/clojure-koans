@@ -29,7 +29,7 @@
   "초기값을 지정해 시작할 수 있다"
   (= 2400 (reduce (fn [a b] (* a b)) __ [1 2 3 4]))
 
-  "숫자에만 리듀스(reduce)를 쓸 수 있는 것은 아다"
+  "숫자에만 리듀스(reduce)를 쓸 수 있는 것은 아니다"
   (= "longest" (reduce (fn [a b]
                          (if (< __ __) b a))
                        ["which" "word" "is" "longest"])))
