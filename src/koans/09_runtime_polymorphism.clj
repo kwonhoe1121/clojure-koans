@@ -10,19 +10,19 @@
                    "!")))
 
 (defmulti diet (fn [x] (:eater x)))
-(defmethod diet :herbivore [a] __)
-(defmethod diet :carnivore [a] __)
-(defmethod diet :default [a] __)
+(defmethod diet :herbivore [a] (str (:name a) " eats veggies." ))
+(defmethod diet :carnivore [a] (str (:name a) " eats animals."))
+(defmethod diet :default [a] (str "I don't know what " (:name a) " eats."))
 
 (meditations
   "어떤 함수는 여러 방식으로 사용되기도 한다 - 전달인자가 없는 경우"
-  (= __ (hello))
+  (= "Hello World!" (hello))
 
   "전달인자 한 개를 받는 경우"
-  (= __ (hello "world"))
+  (= "Hello, you silly world." (hello "world"))
 
   "또는 전달인자 여러 개를 받는 경우"
-  (= __
+  (= "Hello to this group: Peter, Paul, Mary!"
      (hello "Peter" "Paul" "Mary"))
 
   "멀티메소드(multimethod)로 좀 더 복잡한 처리가 된다"
