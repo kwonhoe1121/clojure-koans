@@ -18,28 +18,32 @@
 (deftype Razzie [category]
   Award
   (present [this recipient]
-    __))
+    (print (str "You're really the "
+                (.category this)
+                ", "
+                recipient
+                "... sorry."))))
 
 (meditations
   "레코드를 보유하는 것은 그 레코드가 너에게 가치 있을 때만 의미있다"
-  (= __ (.prize (Nobel. "peace")))
+  (= "peace" (.prize (Nobel. "peace")))
 
   "타입도 레코드와 꽤 비슷하다"
-  (= __ (.prize (Pulitzer. "literature")))
+  (= "literature" (.prize (Pulitzer. "literature")))
 
   "레코드는 맵처럼 다룰 수 있다"
-  (= __ (:prize (Nobel. "physics")))
+  (= "physics" (:prize (Nobel. "physics")))
 
   "반면 타입은 그렇지 않다"
-  (= __ (:prize (Pulitzer. "poetry")))
+  (= nil (:prize (Pulitzer. "poetry")))
 
   "더 공부하면 이유를 알게 된다"
-  (= __
+  (= '(true false)
      (map map? [(Nobel. "chemistry")
                 (Pulitzer. "music")]))
 
   "두 데이터타입 모두 프로토콜(protocol)로 메소드를 정의할 수 있다"
-  (= __
+  (= "Congratulations on your Best Picture Oscar, Evil Alien Conquerors!"
      (with-out-str (present (Oscar. "Best Picture") "Evil Alien Conquerors")))
 
   "지금쯤은 틀림없이 스스로 구현(implement)할 수 있을 것이다"
